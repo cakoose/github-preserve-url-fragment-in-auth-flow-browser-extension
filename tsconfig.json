@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+        "target": "es6",
+        "lib": ["es6", "dom"],
+        "strict": true,
+        "module": "commonjs",
+        "allowJs": false,
+        "sourceMap": true,
+        "noEmitOnError": true,
+        "outDir": "./dist"
+    },
+    "include": ["src/**/*.ts"]
+}
