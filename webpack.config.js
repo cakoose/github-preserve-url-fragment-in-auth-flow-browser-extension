@@ -24,9 +24,9 @@ module.exports = {
     },
     devtool: false,
     plugins: [
-        // exclude locale files in moment
-        new CopyWebpackPlugin({
-            patterns: [{from: 'src/manifest.json', to: '.'}],
-        }),
+        new CopyWebpackPlugin({patterns: [
+            {context: 'src', from: '*.json', to: '.'},
+            {context: 'src', from: '*.png', to: '.'},
+        ]}),
     ],
 };
