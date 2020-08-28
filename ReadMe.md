@@ -1,14 +1,14 @@
 # GitHub: Preserve URL fragment in auth flow (browser extension)
 
-When you visit a GitHub URL, GitHub might first send you through an auth flow, then redirect back to your original URL.
+When GitHub redirects you to auth, it'll eventually return you to your original URL, but will lose the fragment part of the URL (e.g. "#L104").  This extension preserves the URL fragment across the redirect.
 
-The problem: if your URL includes a URL fragment (e.g. "#L104"), that part gets lost.
+Install:
+- [Firefox Add-on](https://addons.mozilla.org/en-US/firefox/addon/github-preserve-url-fragment/)
+- [Chrome Extension](https://chrome.google.com/webstore/detail/github-preserve-url-fragm/hnnmkldalhgoloejmgppbbhgbflpeknh)
 
-This is a tiny browser extension that fixes that problem.
+## Development
 
-I have tested on Chrome.  Apparently Firefox supports the same browser extension APIs, so this might work on Firefox unmodified.
-
-## To build
+### To build
 
 ```
 yarn install --frozen-lockfile
@@ -19,11 +19,19 @@ yarn run build
 
 The browser extension is built into the "dist" folder.
 
-## To run in Chrome
+### To run in Firefox
 
-1. Go to "chrome://extensions"
+1. Navigate to: about:debugging#/runtime/this-firefox
+2. Click "Load Temporary Add-on..."
+3. Select the "manifest.json" file in this project's "dist" subfolder.
+
+To view the extension's JS console output, click the extension's "Inspect" button.
+
+### To run in Chrome
+
+1. Navigate to: chrome://extensions
 2. Enable "Developer mode" (top right)
-3. Click "Load unpacked".
+3. Click "Load unpacked"
 4. Select this project's "dist" subfolder.
 
-To view the extension's JS console output, click on the extension's "Inspect views background page" link.
+To view the extension's JS console output, click the extension's "Inspect views background page" link.
