@@ -2,6 +2,7 @@
     "name": "github-preserve-url-fragment-in-auth-flow-browser-extension",
     "version": "1.0.0",
     "license": "CC0-1.0",
+    "packageManager": "yarn@3.0.2",
     "scripts": {
         "lint": "eslint",
         "build": "webpack --mode=production",
