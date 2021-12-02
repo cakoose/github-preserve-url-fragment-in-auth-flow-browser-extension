@@ -11,7 +11,7 @@ Install:
 ### To build
 
 ```
-yarn install --frozen-lockfile
+yarn install
 yarn run build
 ```
 
